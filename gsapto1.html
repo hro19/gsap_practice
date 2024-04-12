@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSAP Animation</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <style>
+        .myElement {
+            width: 100px;
+            height: 100px;
+            background-image: linear-gradient(#6fb8d9 50%, #f4c14e 80%, #d36950 90%);
+        }
+    </style>
+</head>
+<body>
+    <div class="myElement"></div>
+    <p class="pt-12">あいだです。</p>
+    <div class="myElement"></div>
+
+    <script>
+        gsap.to(".myElement", { duration: 2, x: 200, rotation: 360, repeat: -1, yoyo: true, ease: "bounce" });
+    </script>
+</body>
+</html>
