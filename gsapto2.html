@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>GSAP Animation</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <style>
+        .img_list{
+            display: flex;
+            gap: 30px;
+            margin-top: 30px;
+            margin-left: 30px;
+            img{
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="img_list">
+        <img src="https://picsum.photos/seed/1/200/300" alt="">
+        <img src="https://picsum.photos/seed/2/200/300" alt="">
+        <img src="https://picsum.photos/seed/3/200/300" alt="">
+    </div>
+    <div class="img_list2 flex gap-6 [&>img]:opacity-0">
+    <img src="https://picsum.photos/seed/4/200/300" alt="">
+    <img src="https://picsum.photos/seed/5/200/300" alt="">
+    <img src="https://picsum.photos/seed/6/200/300" alt="">
+    <img src="https://picsum.photos/seed/7/200/300" alt="">
+    <img src="https://picsum.photos/seed/8/200/300" alt="">
+    <img src="https://picsum.photos/seed/9/200/300" alt="">
+    </div>
+
+<script>
+gsap.to(".img_list img", {
+  delay: 1,
+  duration: 1.5,
+  y: -10, // 少し上に移動させる
+  opacity: 1,
+  ease: "power2.out",
+  // 複数要素を扱うプロパティ
+  stagger: {
+    from: "start", //左側から
+    amount: 0.8 // 0.8秒おきに
+  }
+});
+
+gsap.to(".img_list2 img", {
+  delay: 3,
+  duration: 1.5,
+  y: +10, // 少し上に移動させる
+  opacity: 1,
+  ease: "power2.out",
+  // 複数要素を扱うプロパティ
+  stagger: {
+    from: "start", //左側から
+    amount: 0.8 // 0.8秒おきに
+  }
+});
+</script>
+</body>
+</html>
