@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <h1 class="head_title my-6">センター寄せ</h1>
     <div class="container mx-auto">
         <div class="placecontent mb-16 bg-lime-400">
             <img src="https://picsum.photos/seed/5/200/300" alt="">
@@ -27,6 +28,18 @@
     </div>
 
     <style>
+        :root{
+            --sakura: #FFC0CB;
+        }
+
+        .head_title {
+            text-align: center;
+            color: var(--sakura);
+            font-size: 2rem;
+            line-height: 1.5;
+            font-weight: bold;
+        }
+
         .placecontent {
             display: grid;
             place-content: center;
