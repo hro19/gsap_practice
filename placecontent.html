@@ -16,6 +16,9 @@
     <img src="https://picsum.photos/seed/5/200/300" alt="">
 </div>
 
+<div class="banner">
+    <a href="#">DEMO</a>
+    </div>
     
 <style>
 .placecontent {
@@ -30,6 +33,37 @@
   row-gap:30px;
 }
 
+.banner {
+position: relative;
+overflow: hidden;
+max-width: 450px;
+height: 240px
+}
+.banner:after {
+position: absolute;
+content: "";
+display: block;
+width: 100%;
+height: 100%;
+top: 0;
+background: url(https://gokansoichiro.com/wp/wp-content/themes/gds/images/blog/google-earth-view-6202.jpg) no-repeat center center;
+background-size: cover;
+transition: all .3s ease-out;
+}
+.banner:hover:after {
+opacity: .8;
+transform: scale(1.3);
+}
+.banner a {
+position: relative;
+display: flex;
+align-items: center;
+justify-content: center;
+z-index: 1;
+height: 100%;
+text-decoration: none;
+color: #fff
+}
 
 </style>
 </body>
