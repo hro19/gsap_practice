@@ -21,25 +21,25 @@
             <article>
                 <h2>Grid</h2>
                 <figure>
-                    <img src="https://placehold.jp/3d4070/ffffff/350x150.png" />
+                    <img src="https://placehold.jp/4d4070/ffffff/350x150.png" />
                 </figure>
             </article>
             <article>
                 <h2>Grid</h2>
                 <figure>
-                    <img src="https://placehold.jp/3d4070/ffffff/350x150.png" />
+                    <img src="https://placehold.jp/5d4070/ffffff/350x150.png" />
                 </figure>
             </article>
             <article>
                 <h2>Grid</h2>
                 <figure>
-                    <img src="https://placehold.jp/3d4070/ffffff/350x150.png" />
+                    <img src="https://placehold.jp/7d4070/ffffff/350x150.png" />
                 </figure>
             </article>
             <article>
                 <h2>Grid</h2>
                 <figure>
-                    <img src="https://placehold.jp/3d4070/ffffff/350x150.png" />
+                    <img src="https://placehold.jp/8d4070/ffffff/350x150.png" />
                 </figure>
             </article>
         </section>
@@ -52,7 +52,7 @@
     <style>
         .grid_area {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             grid-gap: 10px;
         }
 
@@ -62,26 +62,28 @@
 
         @media (min-width: 768px) {
             .grid_area {
+                grid-template-columns: repeat(3, 1fr);
                 grid-gap: 30px;
             }
         }
 
         .shrink {
-            border: 1px solid #000;
+            border: 1px solid #666;
             margin-block: 10px;
-            padding:10px;
+            padding: 10px;
             display: flex;
             align-items: center;
-            h1 {
-            color: #fff;
-            font-size: 16px;
-            background: #f00;
-            margin-right: 10px;
-            flex-shrink: 0;
-            /* 幅を変更したくない要素に指定 */
-        }
-        }
 
+            h1 {
+                color: #fff;
+                font-size: 16px;
+                background: #f00;
+                padding:5px 10px;
+                margin-right: 10px;
+                flex-shrink: 0;
+                /* 幅を変更したくない要素に指定 */
+            }
+        }
     </style>
 
 </body>
