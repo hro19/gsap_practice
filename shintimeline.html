@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <header class="mx-auto">
+        <nav class="px-3">
+            <h3 class="logo">Car shop</h3>
+            <img class="menu" src="https://placehold.jp/4d4070/ffffff/50x50.png" />
+        </nav>
+        <section>
+            <div class="hero">
+                <img src="images/icon/skyscraper.jpg" />
+                <h1 class="headline">Big Dream</h1>
+            </div>
+        </section>
+        <div class="slider"></div>
+    </header>
+    <div class="container mx-auto my-8">
+        <div class="mb-16">dddd</div>
+        <div class="mb-16">dddd</div>
+        <div class="mb-16">dddd</div>
+        <div class="mb-16">dddd</div>
+        <div class="mb-16">dddd</div>
+        <div class="mb-16">dddd</div>
+        <div class="mb-16">dddd</div>
+        <div class="mb-16">dddd</div>
+        <div class="mb-16">dddd</div>
+    </div>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        header {
+            position: relative;
+            height: 100vh;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            min-height: 10vh;
+        }
+
+        #logo {
+            grid-column: 2/3;
+            font-size: 24px;
+        }
+
+
+        .menu {
+            justify-self: end;
+        }
+
+        .slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(to left, #ba7453, #d1a984);
+            z-index: -1;
+        }
+
+        section {
+            width: 100%;
+            height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero {
+            height: 80%;
+            width: 100%;
+            position: relative;
+        }
+
+        .hero img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: black;
+            width: 100%;
+            height: 100%;
+            opacity: 0.4;
+        }
+
+        .headline {
+            position: absolute;
+            top: 60%;
+            left: 4%;
+            font-size: 70px;
+            font-weight: bold;
+            color: white;
+            transform: translateY(-10%, -70%);
+            z-index: 3;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="./shintimeline.js"></script>
+</body>
+
+</html>
