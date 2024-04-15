@@ -5,48 +5,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link
-  rel="stylesheet"
-  href="https://unpkg.com/modern-css-reset/dist/reset.min.css"
-/>
+    <link rel="stylesheet" href="https://unpkg.com/modern-css-reset/dist/reset.min.css" />
     <title>Document</title>
 </head>
 
 <body>
     <div class="container mx-auto px-4">
-    <section class="grid_area">
-        <article>
-            <h2>Grid</h2>
-            <figure>
-                <img src="https://placehold.jp/3d4070/ffffff/350x150.png" />
-            </figure>
-        </article>
-        <article>
-            <h2>Grid</h2>
-            <figure>
-                <img src="https://placehold.jp/3d4070/ffffff/350x150.png" />
-            </figure>
-        </article>
-        <article>
-            <h2>Grid</h2>
-            <figure>
-                <img src="https://placehold.jp/3d4070/ffffff/350x150.png" />
-            </figure>
-        </article>
-        <article>
-            <h2>Grid</h2>
-            <figure>
-                <img src="https://placehold.jp/3d4070/ffffff/350x150.png" />
-            </figure>
-        </article>
-        <article>
-            <h2>Grid</h2>
-            <figure>
-                <img src="https://placehold.jp/3d4070/ffffff/350x150.png" />
-            </figure>
-        </article>
-    </section>
-</div>
+        <section class="grid_area">
+            <article>
+                <h2>Grid</h2>
+                <figure>
+                    <img src="https://placehold.jp/3d4070/ffffff/350x150.png" />
+                </figure>
+            </article>
+            <article>
+                <h2>Grid</h2>
+                <figure>
+                    <img src="https://placehold.jp/3d4070/ffffff/350x150.png" />
+                </figure>
+            </article>
+            <article>
+                <h2>Grid</h2>
+                <figure>
+                    <img src="https://placehold.jp/3d4070/ffffff/350x150.png" />
+                </figure>
+            </article>
+            <article>
+                <h2>Grid</h2>
+                <figure>
+                    <img src="https://placehold.jp/3d4070/ffffff/350x150.png" />
+                </figure>
+            </article>
+            <article>
+                <h2>Grid</h2>
+                <figure>
+                    <img src="https://placehold.jp/3d4070/ffffff/350x150.png" />
+                </figure>
+            </article>
+        </section>
+        <div class="shrink">
+            <h1>ポイント</h1>
+            <p>テキストが長くなっても「flex-shrink: 0;」を指定していれば大丈夫！</p>
+        </div>
+    </div>
 
     <style>
         .grid_area {
@@ -61,9 +62,26 @@
 
         @media (min-width: 768px) {
             .grid_area {
-            grid-gap: 30px;
+                grid-gap: 30px;
+            }
         }
-}
+
+        .shrink {
+            border: 1px solid #000;
+            margin-block: 10px;
+            padding:10px;
+            display: flex;
+            align-items: center;
+            h1 {
+            color: #fff;
+            font-size: 16px;
+            background: #f00;
+            margin-right: 10px;
+            flex-shrink: 0;
+            /* 幅を変更したくない要素に指定 */
+        }
+        }
+
     </style>
 
 </body>
