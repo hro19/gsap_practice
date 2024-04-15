@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+  rel="stylesheet"
+  href="https://unpkg.com/modern-css-reset/dist/reset.min.css"
+/>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container mx-auto px-4">
+    <section class="grid_area">
+        <article>
+            <h2>Grid</h2>
+            <figure>
+                <img src="https://placehold.jp/3d4070/ffffff/350x150.png" />
+            </figure>
+        </article>
+        <article>
+            <h2>Grid</h2>
+            <figure>
+                <img src="https://placehold.jp/3d4070/ffffff/350x150.png" />
+            </figure>
+        </article>
+        <article>
+            <h2>Grid</h2>
+            <figure>
+                <img src="https://placehold.jp/3d4070/ffffff/350x150.png" />
+            </figure>
+        </article>
+        <article>
+            <h2>Grid</h2>
+            <figure>
+                <img src="https://placehold.jp/3d4070/ffffff/350x150.png" />
+            </figure>
+        </article>
+        <article>
+            <h2>Grid</h2>
+            <figure>
+                <img src="https://placehold.jp/3d4070/ffffff/350x150.png" />
+            </figure>
+        </article>
+    </section>
+</div>
+
+    <style>
+        .grid_area {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 10px;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        @media (min-width: 768px) {
+            .grid_area {
+            grid-gap: 30px;
+        }
+}
+    </style>
+
+</body>
+
+</html>
