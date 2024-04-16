@@ -49,6 +49,7 @@ tl.from(".boxes", {
   duration: 1.0,
   ease: "expo.out"
 })
+.call(consoling)
 .to(".content", {
   opacity: 1,
   y: 20,
@@ -61,6 +62,30 @@ tl.from(".boxes", {
   duration: 1.0,
   ease: "expo.out"
 }, "-=0.7")
+.to(".title", {
+  opacity: 1,
+  y: 20,
+  duration: 1.0,
+  ease: "expo.out"
+})
+.call(consoling)
+.to(".content", {
+  opacity: 1,
+  y: 20,
+  duration: 1.0,
+  ease: "expo.out"
+}, "-=0.7")
+.to(".img_fig", {
+  opacity: 1,
+  y: 20,
+  duration: 1.0,
+  ease: "expo.out"
+})
+.call(consoling);
+
+function consoling() {
+  document.querySelector(".title").classList.add("is-finish");
+}
 </script>
 </body>
 </html>
