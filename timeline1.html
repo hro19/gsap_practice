@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>GSAP Animation</title>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <style>
+  .boxes {
+    position: relative;
+    width: 400px;
+    padding: 10px 20px 50px;
+    background-color: #f0f0f0;
+    opacity:0
+  }
+
+  </style>
+</head>
+<body>
+  <div class="boxes m-3 flex gap-4">
+  <div class="titbox flex flex-col">
+    <h2 class="title text-4xl leading-7 pb-8 opacity-0">会社のconcept</h2>
+    <p class="content opacity-0">あの時、同じ花を見て、美しいと言った二人の、心と心が今はもう通わないあの素晴らしい愛をもう一度</p>
+  </div>
+  <img class="img_fig opacity-0" src="https://picsum.photos/seed/3/200/300" alt="">
+  </div>
+
+<script>
+// timelineを作成
+const tl = gsap.timeline({
+  repeatDelay: 0.3, // ループとループの間の時間
+  defaults: { duration: 2.0, ease: "power4.out" } // tweenのデフォルトの値
+})
+
+// アニメーションを実行
+tl.from(".boxes", {
+  // scale:0
+})
+.to(".boxes", {
+  opacity: 1,
+  y:30,
+  duration: 0.5,
+  ease: "expo.out"
+})
+.to(".title", {
+  opacity: 1,
+  y: 20,
+  duration: 1.0,
+  ease: "expo.out"
+})
+.to(".content", {
+  opacity: 1,
+  y: 20,
+  duration: 1.0,
+  ease: "expo.out"
+}, "-=0.7")
+.to(".img_fig", {
+  opacity: 1,
+  y: 20,
+  duration: 1.0,
+  ease: "expo.out"
+}, "-=0.7")
+</script>
+</body>
+</html>
