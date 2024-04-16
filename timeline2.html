@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+  rel="stylesheet"
+  href="https://unpkg.com/modern-css-reset/dist/reset.min.css"
+/>
     <script src="https://cdn.tailwindcss.com"></script>
     <link
     rel="stylesheet"
@@ -14,6 +18,15 @@
     <div class="inline-block m-4 px-5 py-8 bg-pink-500 text-white text-4xl">
     <h1 id="tit01" class="">An animated element</h1>
 </div>
+<div class="relative bg-green-300">
+<div class="sample sample2 text-white text-2xl "></div>
+<h5 class="absolute top-20 left-16 text-white text-2xl">ここはひし形</h5>
+</div>
+
+<div class="parallelogram flex justify-center items-center">
+    <h5 class="text-xl text-white">ここは平行四辺形</h5>
+</div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
     <script>
@@ -22,5 +35,24 @@
     tl.to("#tit01", { className: "animate__animated animate__bounce animate__infinite" })
 
     </script>
+
+    <style>
+    .sample{/*元の正方形*/
+        background:#541231;
+        width:150px;
+        height:250px;
+        margin-left:160px;
+    }
+.sample2{
+    transform:rotate(45deg) skew(-45deg,8deg);/*回転と傾斜*/
+}
+
+.parallelogram {
+  width: 400px; /* 幅 */
+  height: 100px; /* 高さ */
+  background-color: #1266aa; /* 黄緑の背景色 */
+  clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%); /* 平行四辺形のパス */
+}
+    </style>
 </body>
 </html>
