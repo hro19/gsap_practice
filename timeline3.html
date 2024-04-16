@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/modern-css-reset/dist/reset.min.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1 class="text-2xl center text-gray-800 mx-16">timelineで続けて表示</h1>
+    <div id="box01" class="relative">
+        <div id="heikoshihenkei">
+            <h5 id="heikoshihenkei_tit" class="opacity-0">ここは平行四辺形だたたっ</h5>
+        </div>
+        <div id="heikoshihenkei2">
+            <h5 id="heikoshihenkei_tit2" class="opacity-0">そうなのです、<br />ここに現われるのです</h5>
+        </div>
+    </div>
+    <div id="box02">
+        box02のコンテンツ箇所です。box02のコンテンツ箇所です。box02のコンテンツ箇所です。box02のコンテンツ箇所です。box02のコンテンツ箇所です。<br>
+        box02のコンテンツ箇所です。box02のコンテンツ箇所です。box02のコンテンツ箇所です。box02のコンテンツ箇所です。box02のコンテンツ箇所です。<br>
+        box02のコンテンツ箇所です。box02のコンテンツ箇所です。box02のコンテンツ箇所です。box02のコンテンツ箇所です。box02のコンテンツ箇所です。<br>
+        box02のコンテンツ箇所です。box02のコンテンツ箇所です。box02のコンテンツ箇所です。box02のコンテンツ箇所です。box02のコンテンツ箇所です。
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script>
+        const tl = gsap.timeline();
+        tl.to("#heikoshihenkei", { className: "animate__animated animate__fadeInLeft" })
+        tl.to("#heikoshihenkei", { width: "600px", duration: 0.7 })
+        tl.to("#heikoshihenkei_tit", { className: "animate__animated animate__fadeInLeft" })
+        tl.to("#heikoshihenkei2", { className: "animate__animated animate__fadeInLeft", delay: 0.8 })
+        tl.to("#heikoshihenkei_tit2", { className: "animate__animated animate__fadeInLeft" })
+
+
+    </script>
+
+    <style>
+        #heikoshihenkei {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 400px;
+            /* 幅 */
+            height: 100px;
+            /* 高さ */
+            background-color: #1266aa;
+            /* 黄緑の背景色 */
+            clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+            /* 平行四辺形のパス */
+            margin-top: 20px;
+            opacity: 0;
+        }
+
+        #heikoshihenkei_tit {
+            font-size: 40px;
+            font-weight: bold;
+            color: #fff;
+            opacity: 0;
+        }
+
+        #heikoshihenkei2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 400px;
+            /* 幅 */
+            height: 200px;
+            /* 高さ */
+            background-color: #88ddaa;
+            /* 黄緑の背景色 */
+            clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+            /* 平行四辺形のパス */
+            margin-top: 20px;
+            opacity: 0;
+        }
+
+        #heikoshihenkei_tit2 {
+            margin-top: -15px;
+            font-size: 33px;
+            line-height: 40px;
+            font-weight: bold;
+            text-align: center;
+            color: #fff;
+            opacity: 0;
+        }
+
+        /* https://fastcoding.jp/blog/all/webdesign/css-diagonal-layout/ 背景を斜めにする */
+        #box01 {
+            position:relative;
+            background-color: #ccc;
+            padding: 80px 0;
+        }
+
+        #box01::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            /*ここで三角形のサイズを決める。必ず幅100vwにして、ブラウザサイズいっぱいにしてください。*/
+            border-width: 40px 0 0 100vw;
+            /*transparentで余分な線を消す*/
+            border-color: transparent transparent transparent #9266aa;
+        }
+
+        #box02 {
+            position:relative;
+            background-color: #9266aa;
+            padding: 80px 0 120px;
+        }
+
+        #box02::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 40px 0 0 100vw;
+            border-color: transparent transparent transparent #fff;
+        }
+    </style>
+</body>
+
+</html>
