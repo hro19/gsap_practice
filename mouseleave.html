@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>GSAP Animation</title>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <style>
+    .boxes {
+      position: relative;
+      width: 400px;
+      padding: 10px 20px 50px;
+      background-color: #f0f0f0;
+      opacity: 0
+    }
+  </style>
+</head>
+
+<body>
+  <div class="mx-3 my-3">
+    <div id="box">
+      <div class="text-white">ここが箱だ</div>
+    </div>
+  </div>
+
+  <script>
+    // timelineを作成
+    const tl = gsap.timeline({
+      repeatDelay: 0.3, // ループとループの間の時間
+      defaults: { duration: 2.0, ease: "power4.out" } // tweenのデフォルトの値
+    })
+
+    // アニメーションを実行
+    document.querySelector('#box').addEventListener('click', () => {
+      gsap.to('#box', { scale: 1.2, duration: 0.3, ease: 'power2' });
+    });
+
+    document.querySelector('#box').addEventListener('mouseenter', () => {
+      gsap.to('#box', { backgroundColor: '#8423D6', duration: 1.0, ease: 'power4.out' });
+    });
+    document.querySelector('#box').addEventListener('mouseleave', () => {
+      gsap.to('#box', { backgroundColor: '#1CB7D9', duration: 1.0, ease: 'power4.out' });
+    });
+  </script>
+  <style>
+    #box {
+      width: 100px;
+      height: 100px;
+      background-color: #3300cc;
+    }
+  </style>
+</body>
+
+</html>
