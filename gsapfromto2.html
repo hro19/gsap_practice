@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSAP Animation</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <style>
+        #myElement {
+            width: 100px;
+            height: 100px;
+            background-image: linear-gradient(#6fb8d9 50%, #f4c14e 80%, #d36950 90%);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div style="height: 100vh;"></div>
+    <div id="myElement"></div>
+    <p class="pt-12">あいだです。</p>
+    <div style="height: 500px;"></div>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        const myElement = document.getElementById('myElement');
+        const tl = gsap.fromTo("#myElement", { x: 0, rotation: 0 }, { x: 200, rotation: 360, duration: 2, ease: "bounce", paused: true, reversed: true });
+
+        ScrollTrigger.create({
+            trigger: "#myElement",
+            start: "top center",
+            end: "bottom center",
+            markers: true,
+            onEnter: () => tl.play(),
+            onLeaveBack: () => tl.reverse(),
+        });
+    </script>
+</body>
+</html>
