@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>GSAP Animation</title>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <style>
+    .menu-btn {
+      width: 50px;
+      height: 50px;
+      background-color: #8217AF;
+      border-radius: 50%;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 100;
+      cursor: pointer;
+    }
+
+    .menu-btn-bar-list{
+        position: absolute;
+        inset: 50% 0 0 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+    }
+
+    .menu-btn-bar-list span{
+        width: 30px;
+        height: 1px;
+        background-color: #fff;
+        margin-bottom: 5px;
+    }
+
+
+    .menu-batu {
+      width: 30px;
+      height: 30px;
+      background-color: red;
+      border-radius: 50%;
+      position: fixed;
+      top: 30px;
+      right: 30px;
+      z-index: 99;
+      cursor: pointer;
+    }
+
+    .menu-item_wrap {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 100;
+    }
+
+    .menu-item {
+      font-size: 2rem;
+      color: #fff;
+      opacity: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="menu-btn">
+    <div class="menu-btn-bar-list">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+  </div>
+  <div class="menu-batu"></div>
+  <div class="menu-item_wrap">
+    <div class="menu-item"><a href="/index.html">Home</a></div>
+    <div class="menu-item"><a href="/gsapto3.html">About</a></div>
+    <div class="menu-item"><a href="/timeline3.html">Contact</a></div>
+  </div>
+
+  <script>
+    const menuBtn = document.querySelector('.menu-btn');
+    const menuBatu = document.querySelector('.menu-batu');
+    const menuItems = document.querySelectorAll('.menu-item');
+
+    const tl = gsap.timeline({ paused: true, reversed: true });
+
+    tl.to(menuBtn, { scale: 65, duration: 1, ease: "power4.out" })
+      .to(".menu-btn-bar", { opacity: 0 }, "-=1.0")
+      .to(".menu-btn-bar-list", { display: "none", duration: 0 }, "-=1.0")
+      .to(".menu-batu", { zIndex: 101 }, "-=1.0")
+      .to(menuItems, {
+        opacity: 1,
+        stagger: 0.2,
+      }, "-=0.2");
+
+      menuBtn.addEventListener('click', () => {
+      tl.reversed() ? tl.play() : tl.reverse();
+    });
+
+    menuBatu.addEventListener('click', () => {
+      tl.reverse();
+    });
+  </script>
+</body>
+</html>
