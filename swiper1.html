@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Swiper demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Demo styles -->
+    <style>
+        html,
+        body {
+            position: relative;
+            height: 100%;
+        }
+
+        body {
+            background: #eee;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+
+        .swiper {
+            width: 100%;
+            height: 550px;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .swiper {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-purple-400">
+        <div class="container mx-auto">
+            <ul class="flex justify-center gap-8 py-8 [&>li]:text-white [&>li]:text-xl">
+                <li><a href="#">トップ</a></li>
+                <li><a href="#">アバウト</a></li>
+                <li><a href="#">ニュース</a></li>
+                <li><a href="#">コンタクト</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="/images/image01.jpg" /></div>
+            <div class="swiper-slide"><img src="/images/image02.jpg" /></div>
+            <div class="swiper-slide"><img src="/images/image03.jpg" /></div>
+            <div class="swiper-slide"><img src="/images/image04.jpg" /></div>
+            <div class="swiper-slide"><img src="/images/image05.jpg" /></div>
+            <div class="swiper-slide"><img src="/images/image06.jpg" /></div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <h3 class="bg-orange-400 text-2xl my-4">参考サイト</h3>
+    <div class="my-2 [&>p>a]:underline  [&>p>a]:text-gray-700">
+        <p><a href="https://github.com/nolimits4web/swiper" target="_blank">公式github</a></p>
+        <p><a href="https://swiperjs.com/demos" target="_blank">公式example</a></p>
+        <p><a href="https://swiperjs.com/swiper-api" target="_blank">公式ドキュメント</a></p>
+        <p><a href="https://junpei-sugiyama.com/swiper-centeredslides/" target="_blank">【Swiper】左右が少し見切れているスライダーの作り方</a>
+        </p>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1.25,
+            centeredSlides: true,
+            spaceBetween: 20,
+            loop: true,
+            autoplay: {
+                delay: 3000, // 3秒ごとにスライドが切り替わる
+                disableOnInteraction: false, // ユーザー操作後も自動再生が続く
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    </script>
+
+</body>
+
+</html>
