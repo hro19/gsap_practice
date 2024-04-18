@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="tab-area">
+        <ul class="tab-group" role="tablist">
+            <li role="presentation">
+                <button class="tab" role="tab" aria-controls="panel01" aria-selected="true">Tab A</button>
+            </li>
+            <li role="presentation">
+                <button class="tab" role="tab" aria-controls="panel02" aria-selected="false">Tab B</button>
+            </li>
+            <li role="presentation">
+                <button class="tab" role="tab" aria-controls="panel03" aria-selected="false">Tab C</button>
+            </li>
+        </ul>
+        <div class="panel-group">
+            <div class="panel" id="panel01" role="tabpanel" aria-hidden="false">Content A</div>
+            <div class="panel" id="panel02" role="tabpanel" aria-hidden="true">Content B</div>
+            <div class="panel" id="panel03" role="tabpanel" aria-hidden="true">Content C</div>
+        </div>
+    </div>
+
+    <style>
+        @keyframes show {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .tab-area {
+            padding-top: 100px;
+        }
+
+        .tab-group {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+            width: 600px;
+            margin: 0 auto;
+            padding-left: 0;
+        }
+
+        .tab {
+            width: 200px;
+            height: 50px;
+            border: solid 1px #ccc;
+            background-color: #f5f5f5;
+            text-align: center;
+            font-family: "Teko", sans-serif;
+            font-size: 16px;
+            cursor: pointer;
+
+            &[aria-selected="true"] {
+                border: none;
+                background-color: #6667ab;
+                color: #fff;
+                transition-property: color, background-color;
+                transition-duration: 0.4s;
+                transition-timing-function: ease;
+            }
+        }
+
+        .panel-group {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-top: none;
+        }
+
+        .panel {
+            display: none;
+            width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 70px 0;
+            background: #f5f5f5;
+            text-align: center;
+
+            &[aria-hidden="false"] {
+                display: block;
+                animation: show 0.4s ease;
+            }
+        }
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const tabs = document.getElementsByClassName("tab");
+            for (let i = 0; i < tabs.length; i++) {
+                tabs[i].addEventListener("click", tabSwitch);
+            }
+
+            function tabSwitch() {
+                // タブのaria属性変更
+                document
+                    .querySelector('.tab[aria-selected="true"]')
+                    .setAttribute("aria-selected", "false");
+                this.setAttribute("aria-selected", true);
+
+                // パネルのaria属性変更
+                document
+                    .querySelector('.panel[aria-hidden="false"]')
+                    .setAttribute("aria-hidden", "true");
+                const arrayTabs = Array.prototype.slice.call(tabs);
+                const index = arrayTabs.indexOf(this);
+                document
+                    .getElementsByClassName("panel")
+                [index].setAttribute("aria-hidden", "false");
+            }
+        });
+    </script>
+</body>
+
+</html>
