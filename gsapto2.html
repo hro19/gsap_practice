@@ -7,24 +7,20 @@
     <title>GSAP Animation</title>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <style>
-        .img_list{
+        #img_list{
             display: flex;
             gap: 30px;
-            margin-top: 30px;
-            margin-left: 30px;
-            img{
-                opacity: 0;
-            }
+            margin: 30px 20px;
         }
     </style>
 </head>
 <body>
-    <div class="img_list">
+    <div id="img_list">
         <img src="https://picsum.photos/seed/1/200/300" alt="">
         <img src="https://picsum.photos/seed/2/200/300" alt="">
         <img src="https://picsum.photos/seed/3/200/300" alt="">
     </div>
-    <div class="img_list2 flex gap-6 [&>img]:opacity-0">
+    <div id="img_list2" class="flex gap-3">
     <img src="https://picsum.photos/seed/4/200/300" alt="">
     <img src="https://picsum.photos/seed/5/200/300" alt="">
     <img src="https://picsum.photos/seed/6/200/300" alt="">
@@ -34,10 +30,15 @@
     </div>
 
 <script>
-gsap.to(".img_list img", {
+  // setを用いて初期値の設定
+gsap.set("#img_list img,#img_list2 img", { opacity: 0 });
+gsap.set("#img_list img", { y: 10 });
+gsap.set("#img_list2 img", { x: 30 });
+
+gsap.to("#img_list img", {
   delay: 1,
   duration: 1.5,
-  y: -10, // 少し上に移動させる
+  y: 0, // 少し上に移動させる
   opacity: 1,
   ease: "power2.out",
   // 複数要素を扱うプロパティ
@@ -47,10 +48,10 @@ gsap.to(".img_list img", {
   }
 });
 
-gsap.to(".img_list2 img", {
+gsap.to("#img_list2 img", {
   delay: 3,
   duration: 1.5,
-  y: +10, // 少し上に移動させる
+  x: 0, // 少し上に移動させる
   opacity: 1,
   ease: "power2.out",
   // 複数要素を扱うプロパティ
