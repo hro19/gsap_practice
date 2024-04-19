@@ -25,7 +25,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
 <script defer>
     gsap.set("#articles li", { opacity: 0, y: 30 });
-    gsap.to("#articles li", 1.4,{ opacity: 1, y: 0, stagger:{each: 0.2,from:"start"} });
+    gsap.to("#articles li", 1.4, { opacity: 1, y: 0, stagger: { each: 0.2, from: "start" }, delay:0.5, ease: "power3.out" });
 </script>
 </body>
 </html>
