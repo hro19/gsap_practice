@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
   <title>GSAP Animation</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <style>
   .boxes {
     position: relative;
     width: 400px;
-    padding: 10px 20px 50px;
+    padding: 40px 30px;
     background-color: #f0f0f0;
-    opacity:0
   }
 
   </style>
@@ -33,58 +33,43 @@ const tl = gsap.timeline({
   defaults: { duration: 2.0, ease: "power4.out" } // tweenのデフォルトの値
 })
 
+tl.set(".boxes", {opacity: 0,y: -30})
+tl.set(".title", {opacity: 0,y: -20})
+tl.set(".content", {opacity: 0,y: -20})
+tl.set(".img_fig", {opacity: 0,y: -20})
+
 // アニメーションを実行
 tl.from(".boxes", {
   // scale:0
 })
 .to(".boxes", {
   opacity: 1,
-  y:30,
+  y:0,
   duration: 0.5,
-  ease: "expo.out"
+  ease: "power2.out"
 })
 .to(".title", {
   opacity: 1,
-  y: 20,
+  y: 0,
   duration: 1.0,
-  ease: "expo.out"
+  ease: "power2.out"
 })
 .call(consoling)
 .to(".content", {
   opacity: 1,
-  y: 20,
+  y: 0,
   duration: 1.0,
-  ease: "expo.out"
+  ease: "power2.out"
 }, "-=0.7")
 .to(".img_fig", {
   opacity: 1,
-  y: 20,
+  y: 0,
   duration: 1.0,
-  ease: "expo.out"
+  ease: "power2.out"
 }, "-=0.7")
-.to(".title", {
-  opacity: 1,
-  y: 20,
-  duration: 1.0,
-  ease: "expo.out"
-})
-.call(consoling)
-.to(".content", {
-  opacity: 1,
-  y: 20,
-  duration: 1.0,
-  ease: "expo.out"
-}, "-=0.7")
-.to(".img_fig", {
-  opacity: 1,
-  y: 20,
-  duration: 1.0,
-  ease: "expo.out"
-})
-.call(consoling);
 
 function consoling() {
-  document.querySelector(".title").classList.add("is-finish");
+  document.querySelector(".title").classList.add("animate__animated", "animate__bounce", "animate__infinite");
 }
 </script>
 </body>
