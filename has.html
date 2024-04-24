@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/modern-css-reset/dist/reset.min.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1 class="text-2xl center text-gray-800 mx-16">timelineで続けて表示をscrolltriggerと合わせる</h1>
+    <div class="box">
+        <a href="#"></a>
+        <h2>こんにちわ</h2>
+        <p class="description">はははははあおあはおは</p>
+    </div>
+
+    <style>
+.box{
+    position: relative;
+    background-color: #ff0000;
+    display: inline-block;
+    padding: 10px;
+    a{
+        position: absolute;
+        inset: 0;
+    }
+    h2{
+        font-size: 26px;
+    }
+}
+.box:has(a:hover) h2 {
+  color: white;
+}
+
+    </style>
+</body>
+
+</html>
